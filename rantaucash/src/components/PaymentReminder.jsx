@@ -7,7 +7,7 @@ const PaymentReminder = () => {
 
   const handleSetReminder = async () => {
     try {
-      await axios.post('http://localhost:5000/api/payments/reminder', { date: reminderDate });
+      await axios.post('https://rantau-cashalpha-lemon.vercel.app/api/payments/reminder', { date: reminderDate });
       setMessage('Reminder set successfully!');
     } catch (error) {
       setMessage('Failed to set reminder.');
