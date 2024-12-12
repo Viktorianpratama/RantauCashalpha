@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());  // Untuk memparse request body (termasuk senderEmail)
 
-const upload = multer({ dest: 'uploads/' });
+// const upload = multer({ dest: 'uploads/' });
 
 const router = express.Router();
 
