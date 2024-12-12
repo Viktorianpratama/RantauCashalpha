@@ -13,7 +13,7 @@ const AdminPanel = () => {
       const token = localStorage.getItem('token');
       try {
         // Mengambil data profil pengguna
-        const userResponse = await axios.get('http://localhost:5000/api/users/profile', {
+        const userResponse = await axios.get('https://rantau-cashalpha-lemon.vercel.app/api/users/profile', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUserData(userResponse.data.user);
@@ -25,7 +25,7 @@ const AdminPanel = () => {
     const fetchRooms = async () => {
       try {
         // Mengambil data kamar
-        const roomsResponse = await axios.get('http://localhost:5000/api/rooms/kamar');
+        const roomsResponse = await axios.get('https://rantau-cashalpha-lemon.vercel.app/api/rooms/kamar');
         setRooms(roomsResponse.data);
       } catch (error) {
         console.error('Error fetching rooms:', error);
