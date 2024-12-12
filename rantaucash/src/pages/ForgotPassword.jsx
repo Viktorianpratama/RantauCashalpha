@@ -13,7 +13,7 @@ const ForgotPassword = () => {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/users/forgot-password', { email });
+      const response = await axios.post('https://rantau-cashalpha-lemon.vercel.app/api/users/forgot-password', { email });
       setMessage(response.data.message); // Pesan keberhasilan
     } catch (err) {
       setError(err.response?.data?.error || 'An error occurred. Please try again.');
