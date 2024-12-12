@@ -104,8 +104,8 @@ const Login = () => {
           <button type="submit">Login</button>
         </form>
         <div className="additional-links">
-          <Button color="inherit" component={Link} to="/signup" className="navbar-button">New User? Signup</Button>
-          <Button color="inherit" component={Link} to="/forgot-password" className="navbar-button">Forgot your password?</Button>
+          <Button color="inherit" component={Link} to="/signup" >New User? Signup</Button>
+          <Button color="inherit" component={Link} to="/forgot-password" >Forgot your password?</Button>
         </div>
       </div>
     </div>
