@@ -10,7 +10,7 @@ const RoomList = () => {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/rooms/kamar');
+        const response = await axios.get('https://rantau-cashalpha-lemon.vercel.app/api/rooms/kamar');
         console.log('Rooms data:', response.data); // Debugging: memastikan data diterima
         setRooms(response.data);
       } catch (error) {
