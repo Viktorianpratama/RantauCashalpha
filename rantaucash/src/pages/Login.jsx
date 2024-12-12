@@ -104,8 +104,8 @@ const Login = () => {
           <button type="submit">Login</button>
         </form>
         <div className="additional-links">
-        <a href="/signup">New User? Signup</a>
-          <a href="/forgot-password">Forgot your password?</a>
+        <Link to="/signup">New User? Signup</Link>
+<Link to="/forgot-password">Forgot your password?</Link>
         </div>
       </div>
     </div>
