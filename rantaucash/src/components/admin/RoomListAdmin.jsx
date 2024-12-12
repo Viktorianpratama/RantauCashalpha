@@ -17,7 +17,7 @@ const AddRoomForm = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/rooms/kamarAdd', {
+      const response = await axios.post('https://rantau-cashalpha-lemon.vercel.app/api/rooms/kamarAdd', {
         room_number: roomNumber,
         price: parseFloat(price),
         owner_id: ownerId,
