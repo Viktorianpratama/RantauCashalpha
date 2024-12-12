@@ -19,8 +19,8 @@ const AddPayment = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const usersResponse = await axios.get('http://localhost:5000/api/users');
-        const roomsResponse = await axios.get('http://localhost:5000/api/rooms');
+        const usersResponse = await axios.get('https://rantau-cashalpha-lemon.vercel.app/api/users');
+        const roomsResponse = await axios.get('https://rantau-cashalpha-lemon.vercel.app/api/rooms');
         console.log('Users:', usersResponse.data);
         console.log('Rooms:', roomsResponse.data);
   
@@ -44,7 +44,7 @@ const AddPayment = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/payments/add-payment', formData);
+      const response = await axios.post('https://rantau-cashalpha-lemon.vercel.app/api/payments/add-payment', formData);
       console.log('Payment added:', response.data);
       alert('Payment successfully added!');
     } catch (error) {
