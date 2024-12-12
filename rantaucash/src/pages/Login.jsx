@@ -104,8 +104,8 @@ const Login = () => {
           <button type="submit">Login</button>
         </form>
         <div className="additional-links">
-          <Button color="inherit" component={Link} to="/signup" >New User? Signup</Button>
-          <Button color="inherit" component={Link} to="/forgot-password" >Forgot your password?</Button>
+        <a href="https://frontend-rantau.vercel.app/signup">New User? Signup</a>
+        <a href="https://frontend-rantau.vercel.app/forgot-password">Forgot your password?</a>
         </div>
       </div>
     </div>
