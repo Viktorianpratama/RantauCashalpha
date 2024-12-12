@@ -28,7 +28,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://4a8a86ad9eb743.lhr.life/api/users/login', {
+      const response = await axios.post('https://rantau-cashalpha-lemon.vercel.app/api/users/login', {
         email,
         password,
       });
