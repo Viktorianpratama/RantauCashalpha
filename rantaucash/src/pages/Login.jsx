@@ -104,7 +104,7 @@ const Login = () => {
           <button type="submit">Login</button>
         </form>
         <div className="additional-links">
-          <a href="component={Link}'/payments'">New User? Signup</a>
+          <a  <Button color="inherit" component={Link} to="/signup" className="navbar-button">New User? Signup</a>
           <a href="/forgot-password">Forgot your password?</a>
         </div>
       </div>
