@@ -11,30 +11,30 @@ const Signup = () => {
   const navigate = useNavigate();
 
   const handleSignup = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
   
-    if (!name || !email || !password) {
-      alert('All fields are required.');
-      return;
-    }
-  
-    try {
-      await axios.post('https://rantau-cashalpha-lemon.vercel.app/api/users/register', {
-        name,
-        email,
-        password,
-        role: 'penghuni', // Default role
-      });
-  
-      alert('Registration successful!');
-      navigate('/'); // Redirect to login page
-    } catch (err) {
-      console.error('Registration Error:', err.response?.data || err.message);
-      alert(err.response?.data?.error || 'Registration failed!');
-    }
-  };
-  
+  if (!name || !email || !password) {
+    alert('All fields are required.');
+    return;
+  }
 
+  try {
+    await axios.post('https://rantau-cashalpha-lemon.vercel.app/api/users/register', {
+      name,
+      email,
+      password,
+      role: 'penghuni', // Default role
+    });
+
+    alert('Registration successful!');
+    console.log('Navigating to login page'); // Debugging line
+    navigate('/'); // Redirect to login page
+  } catch (err) {
+    console.error('Registration Error:', err.response?.data || err.message);
+    alert(err.response?.data?.error || 'Registration failed!');
+  }
+};
+  
   return (
     <div className="signup-container">
       <div className="welcome-section">
