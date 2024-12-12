@@ -26,40 +26,42 @@ const Login = () => {
   }, [navigate]);
 
   const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post('https://rantau-cashalpha-lemon.vercel.app/api/users/login', {
-        email,
-        password,
-      });
+  e.preventDefault();
+  try {
+    const response = await axios.post('https://rantau-cashalpha-lemon.vercel.app/api/users/login', {
+      email,
+      password,
+    });
 
-      const token = response.data.token;
-      localStorage.setItem('token', token);
+    const token = response.data.token;
+    localStorage.setItem('token', token);
 
-      if (rememberMe) {
-        localStorage.setItem('email', email);
-        localStorage.setItem('rememberMe', 'true');
-      } else {
-        localStorage.removeItem('email');
-        localStorage.removeItem('rememberMe');
-      }
-
-      const decodedToken = JSON.parse(atob(token.split('.')[1]));
-      const userRole = decodedToken.role;
-
-      // Redirect based on role and prevent back navigation
-      if (userRole === 'pemilik') {
-        navigate('/admin', { replace: true });
-      } else if (userRole === 'penghuni') {
-        navigate('/dashboard', { replace: true });
-      }
-
-      alert('Login successful');
-    } catch (err) {
-      console.error('Login Error:', err.response?.data || err.message);
-      alert('Login failed!');
+    if (rememberMe) {
+      localStorage.setItem('email', email);
+      localStorage.setItem('rememberMe', 'true');
+    } else {
+      localStorage.removeItem('email');
+      localStorage.removeItem('rememberMe');
     }
-  };
+
+    const decodedToken = JSON.parse(atob(token.split('.')[1]));
+    const userRole = decodedToken.role;
+
+    console.log('User Role:', userRole); // Debugging line
+
+    // Redirect based on role and prevent back navigation
+    if (userRole === 'pemilik') {
+      navigate('/admin', { replace: true });
+    } else if (userRole === 'penghuni') {
+      navigate('/dashboard', { replace: true });
+    }
+
+    alert('Login successful');
+  } catch (err) {
+    console.error('Login Error:', err.response?.data || err.message);
+    alert('Login failed!');
+  }
+};
 
   return (
     <div className="login-container">
