@@ -21,7 +21,7 @@ console.log('Supabase initialized:', supabase);
 
 
 app.use(cors({
-  origin: 'https://1a5a3e6437cd7a.lhr.life',  // Atur sesuai dengan domain frontend Anda
+  origin: 'https://frontend-rantau.vercel.app',  // Atur sesuai dengan domain frontend Anda
 }));
 
 app.use(express.json());
