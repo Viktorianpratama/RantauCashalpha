@@ -124,28 +124,28 @@ export default (supabase) => {
 
 
   // Endpoint untuk mengunggah bukti pembayaran
-  router.post('/upload-proof', upload.single('proof'), async (req, res) => {
-    try {
-      const { paymentId } = req.body;
-      if (!paymentId || !req.file) {
-        return res.status(400).json({ error: 'Payment ID and proof file are required' });
-      }
+  // router.post('/upload-proof', upload.single('proof'), async (req, res) => {
+  //   try {
+  //     const { paymentId } = req.body;
+  //     if (!paymentId || !req.file) {
+  //       return res.status(400).json({ error: 'Payment ID and proof file are required' });
+  //     }
 
-      const filePath = req.file.path;
-      // Simpan filePath ke database (opsional, tergantung kebutuhan Anda)
-      const { data, error } = await supabase
-        .from('payment_proofs')
-        .insert([{ payment_id: paymentId, file_path: filePath }]);
+  //     const filePath = req.file.path;
+  //     // Simpan filePath ke database (opsional, tergantung kebutuhan Anda)
+  //     const { data, error } = await supabase
+  //       .from('payment_proofs')
+  //       .insert([{ payment_id: paymentId, file_path: filePath }]);
 
-      if (error) {
-        return res.status(500).json({ error: 'Error saving payment proof' });
-      }
+  //     if (error) {
+  //       return res.status(500).json({ error: 'Error saving payment proof' });
+  //     }
 
-      res.status(200).json({ message: 'Proof uploaded successfully', filePath });
-    } catch (error) {
-      res.status(500).json({ error: 'Error uploading proof' });
-    }
-  });
+  //     res.status(200).json({ message: 'Proof uploaded successfully', filePath });
+  //   } catch (error) {
+  //     res.status(500).json({ error: 'Error uploading proof' });
+  //   }
+  // });
 
   // Endpoint untuk memproses pembayaran
   router.post('/payments', async (req, res) => {
